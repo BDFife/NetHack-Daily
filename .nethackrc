@@ -1,0 +1,11 @@
+#----------GAME ENVIRONMENT----------
+OPTIONS=hilite_pet,lit_corridor,DECgraphics
+OPTIONS=showexp,showscore,time
+OPTIONS=msg_window:f,disclose:+i+a+v+g+c
+OPTIONS=suppress_alert:3.3.1
+#------------------------------------
+#----------CUSTOM ENVIRONMENT----------
+OPTIONS:boulder:0,pushweapon
+#--------------------------------------
+#----------CONTROLS----------
+OPTIONS=autodig,!autopickup
