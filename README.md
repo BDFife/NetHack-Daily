@@ -13,5 +13,5 @@ Back up and record the .css extensions for the html
 ## Things to remember
 
 Save files are stored at /usr/games/lib/nethackdir/ on my computer. 
-
+Have Fun! 
 
