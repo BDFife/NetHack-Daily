@@ -15,3 +15,7 @@ Back up and record the .css extensions for the html
 Save files are stored at /usr/games/lib/nethackdir/ on my computer. 
 Have Fun! 
 
+## HTML Snippets:
+
+<a href=# class="inv">[I]<span>INV</span>
+<a href=# class="det">@<span>DESC></span>
