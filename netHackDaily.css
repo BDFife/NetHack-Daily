@@ -1,0 +1,55 @@
+div.window { 
+           background-color: white;
+}
+
+a.inv {
+    text-decoration: none;
+    color:black
+}
+a.inv:hover {
+    cursor: help;
+    position: relative
+}
+a.inv span {
+    display: none
+}
+a.inv:hover span {
+    border: #c0c0c0 1px dotted;
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+    background: url(../images/status-info.png) #f0f0f0 no-repeat 100%
+    5%;
+    left: 0px;
+    margin: 10px;
+    width: 500px;
+    position: absolute;
+    top: 10px;
+    text-decoration: none
+}
+
+a.det {
+    text-decoration: none;
+    color:black
+}
+a.det:hover {
+    cursor: help;
+    position: relative
+}
+a.det span {
+    display: none
+}
+a.det:hover span {
+    border: #c0c0c0 1px dotted;
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+    background: url(../images/status-info.png) #f0f0f0 no-repeat 100%
+    5%;
+    left: 0px;
+    margin: 10px;
+    width: 250px;
+    position: absolute;
+    top: 10px;
+    text-decoration: none
+}
