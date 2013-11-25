@@ -1,5 +1,6 @@
-div.window { 
-           background-color: white;
+.netHackScr pre  {
+	font-family: "Courier New", Courier, mono;
+  	line-height: .6em;
 }
 
 a.inv {
@@ -10,22 +11,24 @@ a.inv:hover {
     cursor: help;
     position: relative
 }
-a.inv span {
-    display: none
+a.inv div {
+    display: none;
 }
-a.inv:hover span {
+
+a.inv:hover div {
     border: #c0c0c0 1px dotted;
     padding: 5px 20px 5px 5px;
     display: block;
     z-index: 100;
-    background: #f0f0f0;
-    /* 5%; */
+	background: black;
+  	color: white;
     left: 0px;
     margin: 10px;
-    /* width: 500px; */
-    position: absolute;
+    width: 500px;
+  	position: absolute;
     top: 10px;
-    text-decoration: none
+  	line-height: 1em;
+    text-decoration: none;
 }
 
 a.det {
@@ -36,20 +39,23 @@ a.det:hover {
     cursor: help;
     position: relative
 }
-a.det span {
-    display: none
+
+a.det div {
+    display: none;
 }
-a.det:hover span {
+
+a.det:hover div {
     border: #c0c0c0 1px dotted;
     padding: 5px 20px 5px 5px;
     display: block;
     z-index: 100;
-    background: #f0f0f0;
-    /* 5%; */
+  	background: black;
+  	color: white;
     left: 0px;
     margin: 10px;
-    /* width: 250px; */
+    width: 250px;
     position: absolute;
     top: 10px;
-    text-decoration: none
+  	line-height: 1em;
+    text-decoration: none;
 }
