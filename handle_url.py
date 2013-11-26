@@ -49,7 +49,7 @@ if __name__ == '__main__':
         htm_data = [
             '<div class="netHackScr">',
             '<hr>',
-            '<pre>',
+            '<pre class="netHackScr">',
         ]
 
         # process the screenshot data
