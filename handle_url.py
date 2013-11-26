@@ -44,6 +44,7 @@ if __name__ == '__main__':
             scr_data = scr_file.readlines()
             # hack in my 'inventory' tag to the last line.
             scr_data[-1] = scr_data[-1][:-1] + " [I]\n"
+
         # opening tags
         htm_data = [
             '<div class="netHackScr">',
@@ -66,7 +67,7 @@ if __name__ == '__main__':
         htm_header = "\n".join(htm_data[0:4])
         htm_body = "\n".join(htm_data[4:-4])
         htm_footer = "\n".join(htm_data[-4:])
-   
+
         # add in the inventory and object descriptions
         with open('%s.inv' % turn) as inv_file:
             inv_data = inv_file.readlines()
@@ -77,16 +78,9 @@ if __name__ == '__main__':
         full_htm_data = ""
         full_htm_data += htm_header
 
-        #print("check 0")
-        #print(htm_body)
-        #print("check 1")
-        #print(full_htm_data)
-
-        # naturally, this will have to be filled out soon!
+        # naturally, this will have to be filled out fully soon!
         obj_list = "<@)+d"
         obj_counter = 0
-
-        #print(htm_body)
 
         # replace an 'object of interest' with the marked up 
         # description text
@@ -104,15 +98,13 @@ if __name__ == '__main__':
                     char = escape_chars[char]
                 full_htm_data += char
 
-
         full_htm_data += "\n" + htm_footer
 
         # fix out the [I] tag.
         # note, it is concievable that '[I]' could occur organically
         # on the game board. I'm ignoring that possiblity for now. 
         # fixme: this is trivially addressed by only modifying htm_footer
-        
         inv_block = "".join(inv_data)        
-        inv_htm_data = full_htm_data.replace(r'[I]',"""<a href=# class="inv">[I]<div>%s</div></a>""" % inv_block)
+        inv_htm_data = full_htm_data.replace('[I]',"""<a href=# class="inv">[I]<div>%s</div></a>""" % inv_block)
         
         print(inv_htm_data)
