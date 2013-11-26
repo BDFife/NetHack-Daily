@@ -83,7 +83,7 @@ if __name__ == '__main__':
         #print(full_htm_data)
 
         # naturally, this will have to be filled out soon!
-        obj_list = "@)+d"
+        obj_list = "<@)+d"
         obj_counter = 0
 
         #print(htm_body)
