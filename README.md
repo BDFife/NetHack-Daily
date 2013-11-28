@@ -21,17 +21,18 @@ copying them over by hand.
 
 I would also like to include two other elements from each page - a
 color commentary narrative written by a guest author, and 'spoiler'
-player commentary that plays a tip-of-the-day role. 
+player commentary that offers a tip-of-the-day. 
 
 ## Things to do
 
-Switch to the \<pre\> tag instead of \<code\>
-Consider dropping the HTML space characters
-Update the CSS in the repository to match what is live on site
-Make the hover blocks less translucent
-Change the hover for inventory to float 'up' rather than down.
-Determine why firefox browser behaves strangely when using hover (due
-to interaction with the web host CSS and my local CSS)
+Verify the rendering engine works as an imported function rather than
+a standalone file.
+
+Build an index that maps out turns and dates published
+
+Build an auto-publish tool that only runs up to the current date
+
+Figure out how to manage some sort of 'staging' site
 
 ## Things to remember
 
