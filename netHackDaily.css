@@ -79,7 +79,8 @@ a.inv:hover div {
     left: 0px;
     margin: 10px;
     position: absolute;
-    top: 10px;
+    /* top: 10px; */
+    top: 10em;
   	line-height: 1em;
     text-decoration: none;
     text-align: left;
@@ -136,17 +137,22 @@ a.det:hover div {
 
 .footer {
 	margin: 0;
-	padding: 0;
+	padding: 1em;
+	text-align: center;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
+/*
 .footer ul {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 }
-
+*/
+/*
 .footer li {
 	padding: 0.5em;
 	display: inline;
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
+*/
