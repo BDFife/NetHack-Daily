@@ -122,8 +122,8 @@ def build_page(turn=1, date="January 1, 2013"):
     
     # convert the list of strings to a single string.
     # keep header, body, footer separate. 
-    htm_header = "\n".join(htm_data[0:15])
-    htm_body = "\n".join(htm_data[15:-3])
+    htm_header = "\n".join(htm_data[0:4])
+    htm_body = "\n".join(htm_data[4:-3])
     htm_footer = "\n".join(htm_data[-3:])
 
     # add in the inventory and object descriptions
@@ -189,3 +189,4 @@ if __name__ == '__main__':
         #print("Processing data for turn %s" % turn)
         
         print(build_page(turn=turn))
+        #build_page(turn=turn)
