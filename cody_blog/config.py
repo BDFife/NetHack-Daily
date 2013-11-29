@@ -138,7 +138,6 @@ py["plugin_dirs"] = [os.path.join(BLOGDIR, "plugins")]
 # ex: py["load_plugins"] = ["pycalendar", "pyfortune", "pyarchives"]
 py["load_plugins"] = [
     "douglas.plugins.paginate",
-    "douglas.plugins.draft_folder",
     "douglas.plugins.published_date",
 ]
 
@@ -194,12 +193,9 @@ py["static_yearindexes"] = False
 # Plugins
 # =======
 
-# draft_folder
-py["draftdir"] = os.path.join(BLOGDIR, 'drafts')
-
 # paginate
 # for the paginate plugin
-py['paginate_previous_text'] = "(more recent) &lt;&lt;"
-py['paginate_next_text'] = "&gt;&gt; (less recent)"
+py['paginate_previous_text'] = "(previous turn) &lt;&lt;"
+py['paginate_next_text'] = "&gt;&gt; (next turn)"
 py['paginate_count_from'] = 1
 py['paginate_linkstyle'] = 1
