@@ -195,7 +195,7 @@ py["static_yearindexes"] = False
 
 # paginate
 # for the paginate plugin
-py['paginate_previous_text'] = "(previous turn) &lt;&lt;"
-py['paginate_next_text'] = "&gt;&gt; (next turn)"
+py['paginate_previous_text'] = "(next turn) &lt;&lt;"
+py['paginate_next_text'] = "&gt;&gt; (previous turn)"
 py['paginate_count_from'] = 1
 py['paginate_linkstyle'] = 1
