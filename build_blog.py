@@ -12,7 +12,7 @@ for move in blog_index:
     post += "#published %s\n"% move['date']
     post += build_page(move['turn'])
 
-    with open('%s.post'% move['turn'],
+    with open('turn_%s.txt'% move['turn'],
               mode='w', 
               encoding='utf-8') as blog_file:
         blog_file.write(post)
