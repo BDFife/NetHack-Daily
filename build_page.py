@@ -153,7 +153,14 @@ def build_nethack_section(nss, obj, inv):
     full_htm_data += "\n" + htm_footer
     return full_htm_data
 
-def build_page(delve_id=0, turn=1, prev=0, next=2, date="January 1, 2013"):
+def build_page(delve_id=0,
+               turn=1,
+               first=1,
+               prev=0,
+               next=2,
+               last=3,
+               date="January 1, 2013",
+               delve_url="/"):
 
     delve_dir = cfg['delves'][0]['dir_name']
 
@@ -168,7 +175,7 @@ def build_page(delve_id=0, turn=1, prev=0, next=2, date="January 1, 2013"):
     with open(os.path.join(delve_dir, '%s.obj' % turn)) as obj_file: 
         obj_data = obj_file.readlines()
 
-    body = build_nethack_section(scr_data, obj_data, inv_data   )
+    body = build_nethack_section(scr_data, obj_data, inv_data)
     
     with open(os.path.join(delve_dir,'%s.str' % turn)) as str_file:
         str_data = str_file.read()
@@ -190,7 +197,11 @@ def build_page(delve_id=0, turn=1, prev=0, next=2, date="January 1, 2013"):
                            entry=body,
                            story=story,
                            tip=tip,
-                           page_navigation=nav)) 
+                           first=first,
+                           prev=prev,
+                           next=next,
+                           last=last,
+                           delve_url=delve_url)) 
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
