@@ -13,7 +13,7 @@
 # Don't touch these next lines.
 import os 
 py = {}
-SITEDIR ="/Users/BDFife/Projects/newNetHackaDay/"
+SITEDIR ="/Users/BDFife/Projects/netHackaDay/"
 
 
 # #################################
