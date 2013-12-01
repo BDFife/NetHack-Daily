@@ -65,7 +65,7 @@ py['template_dir'] = os.path.join(SITEDIR, "templates")
 
 # Base URL for the site. Useful if the site is not stored at the root
 # of a domain. 
-py['base_url'] = "http://www.bluesock.org/~brian/nethack"
+py['base_url'] = "http://nethackaday.com"
 
 # Location where generated content should be stored. 
 py['output_dir'] = os.path.join(SITEDIR, "compiled_site")
