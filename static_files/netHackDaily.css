@@ -132,6 +132,18 @@ a.det:hover div {
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.about {
+    margin: 2em 4em;
+    text-align: justify;
+    font-size: 1em;
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+.about a {
+    font-weight: bold;
+    color: grey;
+}
+
 .tip {
 
 	margin: 2em 4em;
