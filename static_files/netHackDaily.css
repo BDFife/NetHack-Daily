@@ -1,0 +1,158 @@
+.wrap {
+	margin: auto;
+	line-height: 1.6em;
+}
+
+h1 {
+	margin: 0;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 3.5em;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	padding: 1em 1em .2em;
+}
+
+h2 {
+	margin: 0;
+	padding: 1em;
+    text-align: center;
+	text-transform: uppercase;
+	font-size: 1.6em;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	color: grey;
+}
+
+.turn_title {
+	margin: 0;
+	padding: 0.6em;
+	font-variant: small-caps;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-size: 1.6em;
+	text-align: center;
+}
+
+.date {
+	margin: 0;
+	padding: 0.6em;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.netHackScr {
+	margin: auto;
+	padding: 0em;
+	text-align: center;
+}
+
+.netHackScr pre {
+	font-family: "Courier New", Courier, mono;
+	font-size: .8em;
+	line-height: 1em;
+	white-space: pre;
+	padding: 0em;
+	margin: 0em;
+}
+
+a.inv {
+	text-decoration:  none;
+	color: black;
+}
+
+a.inv div {
+	display: none;
+}
+
+/*
+a.inv:hover {
+    cursor: help;
+    position: relative
+}
+*/
+
+a.inv:hover div {
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+	background: black;
+  	color: white;
+    left: 0px;
+    margin: 10px;
+    position: absolute;
+    /* top: 10px; */
+    top: 10em;
+  	line-height: 1em;
+    text-decoration: none;
+    text-align: left;
+}
+
+a.det {
+	text-decoration:  none;
+	color: black;
+}
+
+a.det div {
+    display: none;
+}
+
+a.det:hover {
+    cursor: help;
+	position: relative;
+}
+
+a.det:hover div {
+    padding: 5px 20px 5px 5px;
+    display: block;
+    z-index: 100;
+	background: black;
+  	color: white;
+    left: 0px;
+    margin: 10px;
+    position: absolute;
+    top: 10px;
+  	line-height: 1em;
+    text-decoration: none;
+}
+
+.comments {
+	width: 600px;
+	margin: auto; 
+}
+
+.story {
+	margin: 2em 4em;
+	text-align: justify;
+	font-size: 1em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.tip {
+
+	margin: 2em 4em;
+	font-size: 1em;
+	text-align: justify;
+	font-style: italic;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.footer {
+	margin: 0;
+	padding: 1em;
+	text-align: center;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+/*
+.footer ul {
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+*/
+/*
+.footer li {
+	padding: 0.5em;
+	display: inline;
+	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+*/
