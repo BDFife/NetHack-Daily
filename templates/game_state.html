@@ -14,6 +14,30 @@
 	  <h2>{{ site_description }}</h2>
       <div class="turn_title"> Turn {{ turn }} </div>
 	  <div class="date"> {{ date }} </div>
+      <div class="nav">
+        <ul class="nav">
+          {% if first == turn %}
+          <li>First</li>
+          {% else %}
+          <li><a href="{{delve_url}}/{{first}}">First</a></li>
+          {% endif %}
+          {% if prev > 0 %}
+          <li><a href="{{delve_url}}/{{prev}}">Previous</a></li>
+          {% else %}
+          <li>Previous</li>
+          {% endif %}
+          {% if next > 0 %}
+          <li><a href="{{delve_url}}/{{next}}">Next</a></li>
+          {% else %}
+          <li>Next</li>
+          {% endif %}
+          {% if last == turn %}
+          <li>Last</li>
+          {% else %}
+          <li><a href="{{delve_url}}/{{last}}">Last</a></li>
+          {% endif %}
+        </ul> <!-- nav --> 
+      </div> <!-- nav -->
       <div class="netHackScr">
 <!-- This section *must* not be indented or it will mess up the <pre> rendering -->
 {{ entry|safe }}
@@ -27,19 +51,6 @@
         </div> <!-- tip -->
       </div> <!-- comments -->
       <div class="footer">
-        <ul class="nav">
-          {% if not first == turn %}
-          <li><a href="{{delve_url}}/{{first}}">First</a></li>
-          {% endif %}
-          {% if prev > 0 %}
-          <li><a href="{{delve_url}}/{{prev}}">Previous</a></li>
-          {% endif %}
-          {% if next > 0 %}
-          <li><a href="{{delve_url}}/{{next}}">Next</a></li>
-          {% endif %}
-          {% if not last == turn %}
-          <li><a href="{{delve_url}}/{{last}}">Last</a></li>
-          {% endif %}
       </div> <!-- footer -->
   </body>
 </html>

@@ -160,13 +160,25 @@ a.det:hover div {
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
-.footer ul {
+.nav {
+    margin: 0;
+    padding: 1em;
+    text-align: center;
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+}
+
+.nav a {
+    font-weight: bold;
+    color: grey;
+}
+
+.nav ul {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 }
 
-.footer li {
+.nav li {
 	padding: 0.5em;
 	display: inline;
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
