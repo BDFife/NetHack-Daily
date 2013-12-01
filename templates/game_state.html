@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{base_url}}/netHackDaily.css" type="text/css" />
+    <title>{{ site_title }}</title>
+    <link rel="top" href="{{ base_url }}/" title="{{ site_title }}">
+    <meta name="author" content="{{ authors }}">
+    <meta http-equiv="Content-Type" content="text/html; charset={{ site_encoding }}">
+{#    <link rel="alternate" type="application/rss+xml" href="{{ base_url }}/index.rss"> #} 
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>{{ site_title }}</h1>
+	  <h2>{{ site_description }}</h2>
+      <div class="turn_title"> Turn {{ turn }} </div>
+	  <div class="date"> {{ date }} </div>
+      <div class="netHackScr">
+<!-- This section *must* not be indented or it will mess up the <pre> rendering -->
+{{ entry|safe }}
+      </div> <!-- netHackScr -->
+      <div class="comments">
+        <div class="story">
+            {{ story }}
+        </div> <!-- story -->
+        <div class="tip">
+            {{ tip }}
+        </div> <!-- tip -->
+      </div> <!-- comments -->
+      <div class="footer">
+        <ul class="nav">
+          {% if not first == turn %}
+          <li><a href="{{delve_url}}/{{first}}">First</a></li>
+          {% endif %}
+          {% if prev > 0 %}
+          <li><a href="{{delve_url}}/{{prev}}">Previous</a></li>
+          {% endif %}
+          {% if next > 0 %}
+          <li><a href="{{delve_url}}/{{next}}">Next</a></li>
+          {% endif %}
+          {% if not last == turn %}
+          <li><a href="{{delve_url}}/{{last}}">Last</a></li>
+          {% endif %}
+      </div> <!-- footer -->
+  </body>
+</html>
