@@ -98,14 +98,15 @@ def render_site():
                        delve['path_name'] + '/' + \
                        'turn' 
 
-
+            time_str = time.strftime("%B %d, %Y", parse_date(turn['date']))
+            
             turn_html = build_page(delve_id=delve_id,
                                    turn=turn['turn'],
                                    first=first,
                                    prev=prv_move,
                                    next=nxt_move,
                                    last=last,
-                                   date=turn['date'],
+                                   date=time_str,
                                    delve_url=base_url)
                                
             turn_path = os.path.join(turn_dir,
