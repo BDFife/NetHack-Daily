@@ -3,6 +3,12 @@
 	line-height: 1.6em;
 }
 
+a {
+  text-decoration: none;
+  color: black; 
+}
+
+
 h1 {
 	margin: 0;
 	text-align: center;
@@ -142,17 +148,14 @@ a.det:hover div {
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
-/*
 .footer ul {
 	text-align: center;
 	margin: 0;
 	padding: 0;
 }
-*/
-/*
+
 .footer li {
 	padding: 0.5em;
 	display: inline;
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
-*/

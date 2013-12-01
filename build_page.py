@@ -1,24 +1,5 @@
 #!/usr/bin/python3
 
-"""
-build_post.py
-
-builds a douglas (https://github.com/willkg/douglas) compatible blog
-entry based on a set of input files I have created for netHackDaily.
-
-requires:
-[turn].nss - nethack 'screen shot'
-[turn].obj - descriptions associated with objects on screen
-[turn].inv - character inventory
-[turn].str - story associated with turn
-[turn].tip - tip associated with turn
-
-usage: 'build_post.py [delve_id] [turn_number]'
-
-should be called from the directory where the netHackDaily files are located.
-this script requires python3, because unicode. 
-"""
-
 import sys
 import os
 from config import py as cfg
@@ -153,12 +134,12 @@ def build_nethack_section(nss, obj, inv):
     full_htm_data += "\n" + htm_footer
     return full_htm_data
 
-def build_page(delve_id=0,
-               turn=1,
+def build_page(delve_id=0, 
+               turn=1, 
                first=1,
-               prev=0,
-               next=2,
-               last=3,
+               prev=0, 
+               next=2, 
+               last=2,
                date="January 1, 2013",
                delve_url="/"):
 
