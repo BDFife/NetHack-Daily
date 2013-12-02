@@ -165,11 +165,12 @@ a.det:hover div {
     padding: 1em;
     text-align: center;
     font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    color: lightgray;
 }
 
 .nav a {
     font-weight: bold;
-    color: grey;
+    color: black;
 }
 
 .nav ul {
