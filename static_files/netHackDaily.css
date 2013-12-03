@@ -160,6 +160,14 @@ a.det:hover div {
 	font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
 }
 
+.rights {
+    text-align: center;
+    font-family: "Lucida Grande", Lucida, Verdana, sans-serif;
+    font-size: 0.8em;
+    color: lightgray;
+    padding: 1em;
+
+}
 .nav {
     margin: 0;
     padding: 1em;
