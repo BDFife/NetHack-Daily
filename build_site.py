@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-
+import sys
 import os
 import shutil
 import time
@@ -20,7 +20,7 @@ def parse_date(date_str):
             pass
     raise ValueError('time data {0} format is not recognized'.format(d))
 
-def render_site():
+def render_site(output_dir, staging=False):
 
     # naive file/folder creation here. Let's just 
     # assume everything works...
@@ -30,7 +30,7 @@ def render_site():
 
     # copy over the static files and folders.
     # this is also where output_dir gets created! 
-    shutil.copytree(cfg['static_dir'], cfg['output_dir'])
+    shutil.copytree(cfg['static_dir'], output_dir)
 
     # call build_page iteratively for each delve specified
     # in the config file. 
@@ -38,7 +38,7 @@ def render_site():
         print("Building data for delve %s" % delve['path_name'])
 
         # build a folder off root for the delve
-        delve_dir = os.path.join(cfg['output_dir'], delve['path_name'])
+        delve_dir = os.path.join(output_dir, delve['path_name'])
         os.mkdir(delve_dir)
         # also build a folder for turns
         turn_dir = os.path.join(delve_dir, 'turn')
@@ -48,16 +48,20 @@ def render_site():
                                        '%s.json' % delve['path_name'])
         with open(index_loc) as index_file:
             delve_index = json.load(index_file)
-    
-        # now clean up the index so that only published entries
-        # are included. 
-        cur_delve_index = []
-        for turn in delve_index:
-            if parse_date(turn['date']) < time.localtime():
-                cur_delve_index.append(turn)
-            else:
-                print("Skipping turn %s, publish date is %s" %
-                      (turn['turn'], turn['date']))
+
+        if not staging: 
+            # now clean up the index so that only published entries
+            # are included. 
+            cur_delve_index = []
+            for turn in delve_index:
+                if parse_date(turn['date']) < time.localtime():
+                    cur_delve_index.append(turn)
+                else:
+                    print("Skipping turn %s, publish date is %s" %
+                          (turn['turn'], turn['date']))
+        
+        else:
+            cur_delve_index = delve_index
 
         # ** Warning. Keep clear the distinction between steps 
         # in the index of turns, and turn #. User-actionable turns 
@@ -120,7 +124,7 @@ def render_site():
             
             # Fixme: This will need to be made more elegant. Brute-forcing
             # an index.html at site root temporarily.
-            with open(os.path.join(cfg['output_dir'], 
+            with open(os.path.join(output_dir, 
                                    'index.html'),
                       mode='w',
                       encoding='utf-8') as turn_file:
@@ -128,12 +132,25 @@ def render_site():
 
 
 if __name__ == '__main__':
-    print("Generating static site for all delves")
+
+    if len(sys.argv) > 1 and sys.argv[1] == "stage":
+        print("Generating staging site for all delves")
+        cfg['base_url'] = cfg['stage_url']
+        # bail if the static_render directory exists
+        if os.path.exists(cfg['staging_dir']):
+            print("** Stopping. %s already exists **"% cfg['staging_dir'])
+        else:
+            print("OK, let's do this.")
+            render_site(cfg['staging_dir'], staging=True)
+        
+        
+    else:    
+        print("Generating static site for all delves")
     
-    # bail if the static_render directory exists
-    if os.path.exists(cfg['output_dir']):
-        print("** Stopping. %s already exists **"% cfg['output_dir'])
-    else:
-        print("OK, let's do this.")
-        render_site()
+        # bail if the static_render directory exists
+        if os.path.exists(cfg['output_dir']):
+            print("** Stopping. %s already exists **"% cfg['output_dir'])
+        else:
+            print("OK, let's do this.")
+            render_site(cfg['output_dir'], staging=False)
         

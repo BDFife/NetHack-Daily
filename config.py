@@ -13,7 +13,7 @@
 # Don't touch these next lines.
 import os 
 py = {}
-SITEDIR ="/Users/BDFife/Projects/netHackaDay/"
+SITEDIR ="/Users/Fife/Projects/NetHackaDay/"
 
 
 # #################################
@@ -69,6 +69,12 @@ py['base_url'] = "http://nethackaday.com"
 
 # Location where generated content should be stored. 
 py['output_dir'] = os.path.join(SITEDIR, "compiled_site")
+
+# Location where staging content should be stored.
+py['staging_dir'] = os.path.join(SITEDIR, "staging")
+
+# Base URL for staging directory
+py['stage_url'] = "http://bluesock.org/~brian/nethack"
 
 # Location of additional static files and folders that should be copied
 # to the output_dir. 
