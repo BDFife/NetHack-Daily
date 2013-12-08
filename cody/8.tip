@@ -1,3 +1,2 @@
-By default, NetHack is configured so that your character will
-automatically pick up items as your character walks over them. You may
-want to disable this option globally or partially.
+When you pick up an item in NetHack, it is assigned a letter slot in
+your inventory.

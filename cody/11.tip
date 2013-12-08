@@ -1,1 +1,4 @@
-Brian puts tip here.
+By default, NetHack is configured so that your character will
+automatically pick up items as your character walks over them. You may
+want to disable this option globally or partially.
+
