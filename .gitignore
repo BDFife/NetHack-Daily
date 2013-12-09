@@ -1,3 +1,10 @@
+
+# NetHackaDay Stuff
+compiled_site
+staging
+backup
+
+# Mac Stuff
 .DS_Store
 
 *.py[cod]
