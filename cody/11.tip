@@ -1,4 +1,4 @@
-By default, NetHack is configured so that your character will
-automatically pick up items as your character walks over them. You may
-want to disable this option globally or partially.
+When in an unlit area, human characters may only see what is located
+in adjacent squares. Other player races have infravision, and may see
+monsters that are warm-blooded, or based on fire or ice.
 
