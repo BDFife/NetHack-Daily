@@ -1,3 +1,3 @@
-By default, NetHack is configured so that your character will
-automatically pick up items as your character walks over them. You may
-want to disable this option globally or partially.
+Your pet will generally follow you, but sometimes will get distracted,
+or just follow at a distance. The degree to which a pet stays close to
+you is a factor of its tameness.
