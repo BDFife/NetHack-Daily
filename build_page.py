@@ -1,25 +1,27 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+# _*_ coding: utf-8 _*_
 
 import sys
 import os
+import codecs
 from config import py as cfg
 from jinja2 import Environment, FileSystemLoader
 
 # These are the nethack characters that must be html-escaped
 escape_chars = {
-    "·": "&middot;",
-    " ": " ", # not using &nbsp anymore
-    "&": "&amp;",
-    '"': "&quot;",
-    "'": "&apos;",
-    ">": "&gt;",
-    "<": "&lt;",
-    "┌": "&#9484;",
-    "─": "&#9472;",
-    "┐": "&#9488;",
-    "│": "&#9474;",
-    "└": "&#9492;",
-    "┘": "&#9496;",
+    u"·": "&middot;",
+    u" ": " ", # not using &nbsp anymore
+    u"&": "&amp;",
+    u'"': "&quot;",
+    u"'": "&apos;",
+    u">": "&gt;",
+    u"<": "&lt;",
+    u"┌": "&#9484;",
+    u"─": "&#9472;",
+    u"┐": "&#9488;",
+    u"│": "&#9474;",
+    u"└": "&#9492;",
+    u"┘": "&#9496;",
     }
 
 def build_nethack_section(nss, obj, inv):
@@ -69,7 +71,7 @@ def build_nethack_section(nss, obj, inv):
     for line in scr_data[1:-2]:
         tmp_line = line.rstrip('\n')
         tmp_line = tmp_line.ljust(80, " ")
-        htm_data.append("│" + tmp_line + "│")
+        htm_data.append(u"│" + tmp_line + u"│")
 
     for line in scr_data[-2:]:
         tmp_line = line.rstrip('\n')
@@ -146,24 +148,29 @@ def build_page(delve_id=0,
     delve_dir = cfg['delves'][0]['dir_name']
 
     # import the screenshot data
-    with open(os.path.join(delve_dir, '%s.nss' % turn)) as scr_file:
+    with codecs.open(os.path.join(delve_dir, '%s.nss' % turn), 
+              encoding='utf-8') as scr_file:
         scr_data = scr_file.readlines()
 
     # add in the inventory and object descriptions
-    with open(os.path.join(delve_dir, '%s.inv' % turn)) as inv_file:
+    with codecs.open(os.path.join(delve_dir, '%s.inv' % turn),
+              encoding='utf-8') as inv_file:
         inv_data = inv_file.readlines()
     
-    with open(os.path.join(delve_dir, '%s.obj' % turn)) as obj_file: 
+    with codecs.open(os.path.join(delve_dir, '%s.obj' % turn), 
+              encoding='utf-8') as obj_file: 
         obj_data = obj_file.readlines()
 
     body = build_nethack_section(scr_data, obj_data, inv_data)
     
-    with open(os.path.join(delve_dir,'%s.str' % turn)) as str_file:
+    with codecs.open(os.path.join(delve_dir,'%s.str' % turn),
+              encoding='utf-8') as str_file:
         str_data = str_file.read()
     
     story = str_data
     
-    with open(os.path.join(delve_dir,'%s.tip' % turn)) as tip_file:
+    with codecs.open(os.path.join(delve_dir,'%s.tip' % turn),
+              encoding='utf-8') as tip_file:
         tip_data = tip_file.read()
     
     tip = tip_data

@@ -1,7 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/python
+# _*_ coding: utf-8 _*_
 
 import sys
 import os
+import codecs
 import shutil
 import time
 import datetime
@@ -46,7 +48,7 @@ def render_site(output_dir, staging=False):
         # ok, now crack open the index for the delve in focus
         index_loc = os.path.join(delve['dir_name'], 
                                        '%s.json' % delve['path_name'])
-        with open(index_loc) as index_file:
+        with codecs.open(index_loc) as index_file:
             delve_index = json.load(index_file)
 
         if not staging: 
@@ -119,15 +121,15 @@ def render_site(output_dir, staging=False):
 
             turn_path = os.path.join(turn_path, 'index.html')
 
-            with open(turn_path, mode='w', encoding='utf-8') as turn_file:
+            with codecs.open(turn_path, mode='w', 
+                             encoding='utf-8') as turn_file:
                 turn_file.write(turn_html)
             
             # Fixme: This will need to be made more elegant. Brute-forcing
             # an index.html at site root temporarily.
-            with open(os.path.join(output_dir, 
-                                   'index.html'),
-                      mode='w',
-                      encoding='utf-8') as turn_file:
+            with codecs.open(os.path.join(output_dir, 'index.html'),
+                             mode='w',
+                             encoding='utf-8') as turn_file:
                 turn_file.write(turn_html)
 
 
