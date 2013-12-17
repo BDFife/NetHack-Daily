@@ -109,7 +109,7 @@ def build_nethack_section(nss, obj, inv):
             if char in escape_chars:
                 char = escape_chars[char]
             # don't forget to snip the newline from obj_counter.
-            href_str = '''<a href=# class="det">%s<div>%s</div></a>''' \
+            href_str = '''<a href=# class="det">%s<span>%s</span></a>''' \
                           % (char, obj_data[obj_counter].rstrip('\n'))
             obj_counter += 1
             full_htm_data += href_str
@@ -120,7 +120,7 @@ def build_nethack_section(nss, obj, inv):
 
     # fix out the [I] tag.
     inv_block = "".join(inv_data)        
-    htm_footer = htm_footer.replace('[I]',"""<a href=# class="inv">[I]<div>%s</div></a>""" % inv_block)
+    htm_footer = htm_footer.replace('[I]',"""<a href=# class="inv">[I]<span>%s</span></a>""" % inv_block)
 
     # here's a sneaky trick. Make the alignment identifier a tag
     # without a label to 'clear' hover text on touch devices.
