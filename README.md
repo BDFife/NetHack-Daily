@@ -1,18 +1,18 @@
-# NetHackDaily 'Lite'
+# NetHackDaily
 
 ## Overview
 
-This is a burn down, rewrite of the netHackDaily static site
-generation tools. 
+This project represents a set of scripts that generate the HTML for
+the netHackaDay website.
 
 The long-term goal is to use Will's framework
 [dennis](https://github.com/willkg/douglas) for this, but it needs
-some extending and I'm not ready to do this quite yet. 
+some extending and I'm not ready to switch over yet.
 
 ## Input and Output Files
 
 To run, these tools use a set of input files that capture the state of
-a NetHack game.
+a NetHack game. The input files are generally created by hand.
 
 ### General Site Files
 
