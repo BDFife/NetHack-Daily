@@ -93,8 +93,11 @@ def render_site(output_dir, staging=False):
             except:
                 nxt_move = 0
                 
+            multi = cur_delve_index[turn_index]['multi']
+                
             # now we have first nethack turn #, last nethack turn #, 
-            # and previous and next turns for the current turn. 
+            # and previous and next turns for the current turn
+            # as well as whether there are multiple actions in turn. 
             # time to generate the jinja template. 
 
             print("Publishing turn %s, publish date is %s" %
@@ -113,7 +116,8 @@ def render_site(output_dir, staging=False):
                                    next=nxt_move,
                                    last=last,
                                    date=time_str,
-                                   delve_url=base_url)
+                                   delve_url=base_url,
+                                   multi=multi)
                                
             turn_path = os.path.join(turn_dir,
                                      str(turn['turn']))
