@@ -132,6 +132,13 @@ a.det:hover span {
 	font-family: Georgia, "Times New Roman", Times, serif;
 }
 
+.message {
+    margin: 2em 4em;
+    text-align: center;
+    font-size: 1em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+
 .about {
     margin: 2em 4em;
     text-align: justify;
