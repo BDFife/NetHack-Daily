@@ -10,6 +10,8 @@ import datetime
 import json
 from build_page import build_page
 from config import py as cfg
+from jinja2 import Environment, FileSystemLoader
+from email.Utils import formatdate
 
 # ripped from douglas/plugins/published_date.py
 def parse_date(date_str):
@@ -64,6 +66,9 @@ def render_site(output_dir, staging=False):
         
         else:
             cur_delve_index = delve_index
+
+        # These are for the rss feed:
+        rss_list = []
 
         # ** Warning. Keep clear the distinction between steps 
         # in the index of turns, and turn #. User-actionable turns 
@@ -136,7 +141,26 @@ def render_site(output_dir, staging=False):
                              encoding='utf-8') as turn_file:
                 turn_file.write(turn_html)
 
+            # Now take care of the RSS feed. Inefficient!
+            rss_list.append({'turn':turn['turn'],
+                             'date':time_str,
+                             'rfc822date':formatdate(time.mktime(parse_date(turn['date']))),
+                             'path':base_url + '/' + str(turn['turn']),
+                             'tip':turn_tip,
+                             'story':turn_story,})
 
+            # Do the Jinja2 stuff for the RSS generation:
+            env = Environment(loader=FileSystemLoader(cfg['template_dir']))
+            template = env.get_template('default.rss', globals=cfg)
+            
+            rss_feed = template.render(content = rss_list[-20:],
+                                       latest_rfc822date = formatdate())
+            
+            with codecs.open(os.path.join(output_dir, 'default.rss'),
+                             mode='w',
+                             encoding='utf-8') as rss_file:
+                rss_file.write(rss_feed)
+            
 if __name__ == '__main__':
 
     if len(sys.argv) > 1 and sys.argv[1] == "stage":

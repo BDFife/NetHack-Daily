@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="{{ site_encoding }}" ?>
+<rss version="2.0" 
+   xmlns:creativeCommons="http://backend.userland.com/creativeCommonsRssModule" 
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+   xmlns:slash="http://purl.org/rss/1.0/modules/slash/">
+
+<channel>
+   <title>{{ site_title }}</title>
+   <link>{{ base_url }}</link>
+   <description>{{ site_description }}</description>
+   <language>{{ site_language }}</language>
+   <copyright>{{ site_rights }}</copyright>
+   <ttl>60</ttl>
+   <pubDate>{{ latest_rfc822date }}</pubDate>
+   <managingEditor>{{ site_email }} ({{
+   authors}})</managingEditor>
+   <generator> NetHackaDay Custom Tools </generator>
+
+{% for entry in content %}
+<item>
+   <title>Turn {{ entry.turn }}</title>
+   <guid isPermaLink="false">{{ entry.path }}</guid>
+   <link>{{ entry.path }}</link>
+   <description>
+
+<p>
+{{ entry.story }}
+</p>
+
+<p><em>
+{{ entry.tip }}
+</em></p>
+
+<p>This content (along with graphics) was
+originally published at <a href="{{entry.path}}">{{ entry.path }}</a>.</p>
+
+</description>
+   <pubDate>{{ entry.rfc822date }}</pubDate>
+</item>
+{% endfor %}
+
+</channel>
+</rss>

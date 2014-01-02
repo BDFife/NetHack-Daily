@@ -13,7 +13,7 @@
 # Don't touch these next lines.
 import os 
 py = {}
-SITEDIR ="/Users/Fife/Projects/NetHackaDay/"
+SITEDIR ="/Users/BDFife/Projects/NetHackaDay/"
 
 
 # #################################
@@ -33,7 +33,7 @@ py['site_description'] = "Nethack, one day at a time."
 py['authors'] = "Brian Fife and Paul Nicklas"
 
 # Email address where readers may contact the authors
-py['site_email'] = "http://twitter.com/nethackaday"
+py['site_email'] = "nethackaday@gmail.com"
 
 
 # Copyright info for the site. This may be required to generate 
