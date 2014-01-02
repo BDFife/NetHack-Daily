@@ -8,6 +8,8 @@ from config import py as cfg
 from jinja2 import Environment, FileSystemLoader
 
 # These are the nethack characters that must be html-escaped
+# Typically these are used to draw the dungeon walls, etc.
+
 escape_chars = {
     u"·": "&middot;",
     u" ": " ", # not using &nbsp anymore
@@ -171,16 +173,19 @@ def build_page(delve_id=0,
         # compensate for 0 offset
         for sub_turn in range(multi+1):
             # import the screenshot data
-            with codecs.open(os.path.join(delve_dir, '%s_%s.nss' % (turn, sub_turn)), 
+            with codecs.open(os.path.join(delve_dir, 
+                                          '%s_%s.nss' % (turn, sub_turn)), 
                       encoding='utf-8') as scr_file:
                 scr_data = scr_file.readlines()
 
             # add in the inventory and object descriptions
-            with codecs.open(os.path.join(delve_dir, '%s_%s.inv' % (turn, sub_turn)),
+            with codecs.open(os.path.join(delve_dir, 
+                                          '%s_%s.inv' % (turn, sub_turn)),
                       encoding='utf-8') as inv_file:
                 inv_data = inv_file.readlines()
     
-            with codecs.open(os.path.join(delve_dir, '%s_%s.obj' % (turn, sub_turn)), 
+            with codecs.open(os.path.join(delve_dir, 
+                                          '%s_%s.obj' % (turn, sub_turn)), 
                       encoding='utf-8') as obj_file: 
                 obj_data = obj_file.readlines()
 
@@ -202,7 +207,12 @@ def build_page(delve_id=0,
     env = Environment(loader=FileSystemLoader(cfg['template_dir']))
     template = env.get_template('game_state.html', globals=cfg)
     
-    nav ='<ul class="nav"><li>First Turn</li><li>Previous Turn</li><li>Next Turn</li><li>Current Turn</li></ul>'
+    nav ='<ul class="nav">' + \
+         '<li>First Turn</li>' + \
+         '<li>Previous Turn</li>' + \
+         '<li>Next Turn</li>' + \
+         '<li>Current Turn</li>' + \
+         '</ul>'
     
     return(template.render(date=date,
                            turn=turn,
@@ -213,7 +223,7 @@ def build_page(delve_id=0,
                            prev=prev,
                            next=next,
                            last=last,
-                           delve_url=delve_url)) 
+                           delve_url=delve_url), story, tip) 
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
@@ -221,4 +231,5 @@ if __name__ == '__main__':
     else:
         delve = sys.argv[1]
         turn = sys.argv[2]
-        print(build_page(delve_id=delve, turn=turn))
+        html, story, tip = build_page(delve_id=delve, turn=turn)
+        print html

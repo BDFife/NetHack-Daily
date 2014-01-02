@@ -109,15 +109,15 @@ def render_site(output_dir, staging=False):
 
             time_str = time.strftime("%B %d, %Y", parse_date(turn['date']))
             
-            turn_html = build_page(delve_id=delve_id,
-                                   turn=turn['turn'],
-                                   first=first,
-                                   prev=prv_move,
-                                   next=nxt_move,
-                                   last=last,
-                                   date=time_str,
-                                   delve_url=base_url,
-                                   multi=multi)
+            turn_html, turn_story, turn_tip  = build_page(delve_id=delve_id,
+                                                          turn=turn['turn'],
+                                                          first=first,
+                                                          prev=prv_move,
+                                                          next=nxt_move,
+                                                          last=last,
+                                                          date=time_str,
+                                                          delve_url=base_url,
+                                                          multi=multi)
                                
             turn_path = os.path.join(turn_dir,
                                      str(turn['turn']))
