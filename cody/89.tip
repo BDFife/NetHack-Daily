@@ -1,1 +1,3 @@
-Brian adds tip here.
+Monsters may not open containers (bags, chests, boxes). Any item you
+leave in a container should generally be considered 'safe' from being
+picked up by monsters.
