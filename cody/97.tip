@@ -1,1 +1,4 @@
-Brian adds tip here.
+Searching will fail silently if you do not find anything in that
+turn.
+
+It is often necessary to search multiple times before you find something.
