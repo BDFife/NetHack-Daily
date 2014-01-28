@@ -128,7 +128,7 @@ a.det:hover span {
 .commands {
     font-family: "Courier New", Courier, mono;
     font-size: .8em;
-    line-height: .8em;
+    line-height: 1em;
     text-align: left;
     margin-left: 2em;
     /* text-align: justify; */
