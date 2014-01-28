@@ -126,10 +126,14 @@ a.det:hover span {
 }
 
 .commands {
-    margin: 2em 4em;
-    text-align: justify;
-    font-size: 1em;
-    font-family: Georgia, "Times New Roman", Times, serif;
+    font-family: "Courier New", Courier, mono;
+    font-size: .8em;
+    line-height: .8em;
+    text-align: left;
+    margin-left: 2em;
+    /* text-align: justify; */
+    /* font-size: 1em; */
+    /* font-family: Georgia, "Times New Roman", Times, serif; */
 }
 
 .commands ol {
