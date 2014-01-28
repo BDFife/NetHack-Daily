@@ -125,6 +125,17 @@ a.det:hover span {
 	margin: auto; 
 }
 
+.commands {
+    margin: 2em 4em;
+    text-align: justify;
+    font-size: 1em;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.commands ol {
+    list-style-type: none;
+}
+
 .story {
 	margin: 2em 4em;
 	text-align: justify;

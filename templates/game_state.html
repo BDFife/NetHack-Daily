@@ -50,6 +50,14 @@
         <div class="tip">
             {{ tip }}
         </div> <!-- tip -->
+        <div class="commands">
+          Commands Issued:
+          <ol> 
+          {% for command in commands %}
+            <li>{{ command }} </li>
+          {% endfor %}
+          </ol>
+        </div> <!-- commands -->
       </div> <!-- comments -->
       <div class="footer">
         <a href="{{base_url}}/about.html">About</a>

@@ -26,6 +26,40 @@ escape_chars = {
     u"┘": "&#9496;",
     }
 
+# Map of the key commands
+
+key_descriptions = {
+    'k': "k - move up",
+    'ak': "k - up",
+    'y': "y - move diagonally up and left",
+    'ay': "y - diagonally up and left",
+    'h': "h - move left",
+    'ah': "h - left",
+    'b': "b - move diagonally down and left",
+    'ab': 'b - diagonally down and left',
+    'j': "j - move down",
+    'aj': "j - down",
+    'n': "n - move diagonally down and right",
+    'an': 'n - diagonally down and right',
+    'l': "l - move right",
+    'al': "l - right",
+    'u': "u - move diagonally up and right",
+    'au': "u - up",
+    's': "s - search",
+    'o': "o - open door",
+    'y': "y - yes",
+    'n': "n - no",
+    'None': "No command entered.",
+    ',': ", - pick up items",
+    'w': "w - wield weapon",
+    'e': "e - eat",
+    'f': "f - throw weapon in quiver",
+    '.': ". - rest",
+    'a': "a - use item",
+}
+
+
+
 def build_nethack_section(nss, obj, inv):
     # Takes in the data from [turn].nss.readlines()
 
@@ -191,6 +225,12 @@ def build_page(delve_id=0,
 
             body += build_nethack_section(scr_data, obj_data, inv_data)       
     
+    with codecs.open(os.path.join(delve_dir, "%s.cmd" % turn),
+                     encoding='utf-8') as key_file:
+        commands = [ ] 
+        key_data = key_file.readlines()
+        for key in key_data:
+            commands.append(key_descriptions.get(key.strip(), key))
     
     with codecs.open(os.path.join(delve_dir,'%s.str' % turn),
               encoding='utf-8') as str_file:
@@ -223,6 +263,7 @@ def build_page(delve_id=0,
                            prev=prev,
                            next=next,
                            last=last,
+                           commands=commands,
                            delve_url=delve_url), story, tip) 
 
 if __name__ == '__main__':
