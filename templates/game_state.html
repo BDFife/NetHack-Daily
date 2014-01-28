@@ -42,7 +42,8 @@
       <div class="netHackScr">
 <!-- This section *must* not be indented or it will mess up the <pre> rendering -->
 {{ entry|safe }}
-
+      </div> <!-- netHackScr -->
+      <div class="comments">
         <div class="commands">
            Commands Issued:
            <ol> 
@@ -51,8 +52,6 @@
             {% endfor %}
           </ol>
         </div> <!-- commands -->
-      </div> <!-- netHackScr -->
-      <div class="comments">
         <div class="story">
             {{ story }}
         </div> <!-- story -->
