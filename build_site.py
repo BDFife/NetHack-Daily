@@ -24,7 +24,7 @@ def parse_date(date_str):
             pass
     raise ValueError('time data {0} format is not recognized'.format(d))
 
-def render_site(output_dir, staging=False):
+def render_site(output_dir, staging=False, prod=False):
 
     # naive file/folder creation here. Let's just 
     # assume everything works...
@@ -122,7 +122,8 @@ def render_site(output_dir, staging=False):
                                                           last=last,
                                                           date=time_str,
                                                           delve_url=base_url,
-                                                          multi=multi)
+                                                          multi=multi,
+                                                          prod=prod)
                                
             turn_path = os.path.join(turn_dir,
                                      str(turn['turn']))
@@ -172,7 +173,17 @@ if __name__ == '__main__':
         else:
             print("OK, let's do this.")
             render_site(cfg['staging_dir'], staging=True)
-        
+            
+    # This is specifically to include tracking/analytics
+    elif len(sys.argv) > 1 and sys.argv[1] == "prod":
+        print("Generating production site for all delves")
+
+        # bail if the static_render directory exists
+        if os.path.exists(cfg['output_dir']):
+            print("** Stopping. %s already exists **"% cfg['output_dir'])
+        else:
+            print("OK, let's do this.")
+            render_site(cfg['output_dir'], staging=False, prod=True)
         
     else:    
         print("Generating static site for all delves")
@@ -182,5 +193,5 @@ if __name__ == '__main__':
             print("** Stopping. %s already exists **"% cfg['output_dir'])
         else:
             print("OK, let's do this.")
-            render_site(cfg['output_dir'], staging=False)
+            render_site(cfg['output_dir'], staging=False, prod=False)
         

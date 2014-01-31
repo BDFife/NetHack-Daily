@@ -180,7 +180,8 @@ def build_page(delve_id=0,
                last=2,
                date="January 1, 2013",
                delve_url="/", 
-               multi=0):
+               multi=0,
+               prod=False):
 
     delve_dir = cfg['delves'][0]['dir_name']
 
@@ -264,7 +265,8 @@ def build_page(delve_id=0,
                            next=next,
                            last=last,
                            commands=commands,
-                           delve_url=delve_url), story, tip) 
+                           delve_url=delve_url,
+                           prod=prod), story, tip) 
 
 if __name__ == '__main__':
     if len(sys.argv) < 3:
