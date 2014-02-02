@@ -56,6 +56,7 @@ key_descriptions = {
     'f': "f - throw weapon in quiver",
     '.': ". - rest",
     'a': "a - use item",
+    'q': "q - quaff potion",
 }
 
 
