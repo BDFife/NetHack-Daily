@@ -1,1 +1,6 @@
-Brian adds tip here.
+Potions of Extra Healing are more powerful than standard healing
+potions. 
+
+With all healing potions, if the amount the potion heals exceeds your
+maximum hit points, the potion will also increase your maximum hit
+points by a set amount.
