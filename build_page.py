@@ -136,7 +136,7 @@ def build_nethack_section(nss, obj, inv):
     full_htm_data += htm_header + '\n'
 
     # naturally, this will have to be filled out fully soon!
-    obj_list = "<@)+d=[k"
+    obj_list = "<@)+d=[k%"
     obj_counter = 0
 
     # replace an 'object of interest' with the marked up 
