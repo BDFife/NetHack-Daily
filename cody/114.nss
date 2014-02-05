@@ -1,4 +1,4 @@
-You see here a +2 dart and a fox corpse.                                              
+You see here a +2 dart and a fox corpse.                                          
                                                           
                                                           
                                                                   
