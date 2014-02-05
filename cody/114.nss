@@ -1,6 +1,6 @@
-                                                          Things that are here:
-                                                          a +2 dart
-                                                          a fox corpse
+                                                          
+                                                          
+                                                          
                                                                   
                     ┌───────┐
                     │·····<·│
