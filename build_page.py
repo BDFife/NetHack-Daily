@@ -57,6 +57,7 @@ key_descriptions = {
     '.': ". - rest",
     'a': "a - use item",
     'q': "q - quaff potion",
+    'd': "drop items",
 }
 
 
