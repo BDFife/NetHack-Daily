@@ -59,6 +59,8 @@ key_descriptions = {
     'q': "q - quaff potion",
     'd': "drop items",
     'W': "W - wear armor",
+    'P': "P - put on a ring or other accessory",
+    'R': "R - remove accessory",
 }
 
 
