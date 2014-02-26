@@ -1,3 +1,3 @@
 P
-g
-r
+g - a brass ring
+r - right hand
