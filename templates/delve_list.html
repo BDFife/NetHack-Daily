@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="{{base_url}}/netHackDaily.css" type="text/css" />
+    <link rel="icon" type="image/png" href="{{base_url}}/nethackaday.png" />
+    <title>{{ site_title }}</title>
+    <link rel="top" href="{{ base_url }}/" title="{{ site_title }}">
+    <meta name="author" content="{{ authors }}">
+    <meta http-equiv="Content-Type" content="text/html; charset={{ site_encoding }}">
+    <link rel="alternate" type="application/rss+xml" href="{{ base_url }}/default.rss">
+    {% if prod %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-47694134-1', 'nethackaday.com');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </head>
+  <body>
+    <div class="wrap">
+      <h1>{{ site_title }}</h1>
+	  <h2>{{ site_description }}</h2>
+      <!-- <div class="turn_title"> Turn {{ turn }} </div> -->
+	  <div class="date"> List of all {{list_type}} </div>
+      <div class="comments">
+        {% for item in list_items %}
+          <div class="story">
+            <p><a href="{{ item[0] }}"> {{ item[1] }} </a></p>
+            <p>{{ item[2] }}</p>
+          </div> <!-- story -->
+        {% endfor %}
+      </div> <!-- comments -->
+      <div class="footer">
+        <a href="{{base_url}}/about.html">About</a>
+        <div class="rights">Copyright 2013 Brian Fife and Paul Nicklas</div> 
+      </div> <!-- footer -->
+    </div> <!-- wrap -->
+  </body>
+</html>

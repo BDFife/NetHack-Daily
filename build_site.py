@@ -47,6 +47,12 @@ def render_site(output_dir, staging=False, prod=False):
         # also build a folder for turns
         turn_dir = os.path.join(delve_dir, 'turn')
         os.mkdir(turn_dir)
+        # build a folder for story and tip files
+        story_dir = os.path.join(delve_dir, 'stories')
+        os.mkdir(story_dir)
+        tip_dir = os.path.join(delve_dir, 'tips')
+        os.mkdir(tip_dir)
+
         # ok, now crack open the index for the delve in focus
         index_loc = os.path.join(delve['dir_name'], 
                                        '%s.json' % delve['path_name'])
@@ -142,6 +148,9 @@ def render_site(output_dir, staging=False, prod=False):
                              encoding='utf-8') as turn_file:
                 turn_file.write(turn_html)
 
+
+            # Fixme: This shouldn't work, I think after multiple 
+            # delves are included. 
             # Now take care of the RSS feed. Inefficient!
             rss_list.append({'turn':turn['turn'],
                              'date':time_str,
@@ -161,6 +170,36 @@ def render_site(output_dir, staging=False, prod=False):
                              mode='w',
                              encoding='utf-8') as rss_file:
                 rss_file.write(rss_feed)
+
+            # Use the RSS feed construct to build the tip and story feeds as well.
+            tips = []
+            stories  = []
+            for turn in rss_list:
+                tips.append([base_url + '/' + str(turn['turn']), 
+                             turn['turn'],
+                             turn['tip']])
+                stories.append([base_url + '/' + str(turn['turn']), 
+                                turn['turn'],
+                                turn['story']])
+            
+            template = env.get_template('delve_list.html', globals=cfg)
+            
+            story_list = template.render(list_type="Stories", 
+                                         list_items=stories)
+            
+            with codecs.open(os.path.join(story_dir, 'index.html'),
+                             mode='w',
+                             encoding='utf-8') as story_file:
+                story_file.write(story_list)
+
+            tip_list = template.render(list_type="Tips",
+                                       list_items=tips)
+            
+            with codecs.open(os.path.join(tip_dir, 'index.html'),
+                             mode='w',
+                             encoding='utf-8') as tip_file:
+                tip_file.write(tip_list)
+            
             
 if __name__ == '__main__':
 
