@@ -1,2 +1,3 @@
 a
-o - (polearm name)
+o - a pole sickle (weapon in hands)
+
