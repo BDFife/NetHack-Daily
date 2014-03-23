@@ -1,4 +1,4 @@
-You see here a +2 dart and a kobold corpse                                     
+You see here a +2 dart and a kobold corpse.                                    
                                                                    
                                                                          
         ┌─────┐                                                   
