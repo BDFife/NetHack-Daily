@@ -1,1 +1,3 @@
-Brian puts tip here.
+The 'm' key before a movement key (ykuhlbjn) will move without causing
+your character to pick up an object (if autopickup is turned on) or
+fight a monster (if you otherwise would walk into one).
