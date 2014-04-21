@@ -1,0 +1,6 @@
+39 - a kobold
+81 - a jackal
+82 - a jackal
+113 - a fox
+153 - a lichen
+168 - a kobold zombie
