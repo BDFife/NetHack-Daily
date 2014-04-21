@@ -44,7 +44,7 @@ key_descriptions = {
     'l': "l - move right",
     'al': "l - right",
     'u': "u - move diagonally up and right",
-    'au': "u - up",
+    'au': "u - up and right",
     's': "s - search",
     'o': "o - open door",
     'yy': "y - yes",
