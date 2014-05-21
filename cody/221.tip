@@ -1,1 +1,3 @@
-Brian puts tip here.
+If you try to cast a spell with less than 1,000 turns of 'memory'
+left, you will get a warning message that your knowledge of the spell
+is fading.  
