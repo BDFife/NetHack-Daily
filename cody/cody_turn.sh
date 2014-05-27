@@ -40,7 +40,7 @@ done
 
 # These are the files that the script needs to create.
 # Abort if they exist.
-new_files=( $dec_turn$savegame_file $dec_turn.inv $dec_turn.obj $dec_turn.str $dec_turn.tip )
+new_files=( $turn_num$savegame_file $turn_num.inv $turn_num.obj $turn_num.str $turn_num.tip )
 
 for file in ${new_files[@]}; do
     if [ -e "$file" ] 
@@ -49,9 +49,9 @@ for file in ${new_files[@]}; do
 done
 
 # Copy the savegame file into the main folder. 
-#cp $savegame_loc $turn_num$savegame_file
-echo "Skipping the savegame copy for now. FIX!FIX!FIX!"
-echo $turn_num$savegame_file
+cp $savegame_loc $turn_num$savegame_file
+#echo "Skipping the savegame copy for now. FIX!FIX!FIX!"
+#echo $turn_num$savegame_file
 
 # Create the tip and story.
 echo "Brian to write tip." > $turn_num.tip
