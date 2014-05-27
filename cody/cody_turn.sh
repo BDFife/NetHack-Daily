@@ -63,4 +63,4 @@ cp $dec_turn.obj $turn_num.obj
 
 # Finished.
 echo "All files have been copied or created."
-echo "Make sure to update $dec_turn.inv and $dec_turn.obj"
+echo "Make sure to update $turn_num.inv and $turn_num.obj"
