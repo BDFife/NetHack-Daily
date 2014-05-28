@@ -1,4 +1,5 @@
 # This script assumes you've already created the .cmd and .nss files.
+# FIXME: Need to check to see if the nethack savegame file exists before trying to copy it. 
 
 turn_num=$1
 
