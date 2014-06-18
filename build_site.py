@@ -105,6 +105,7 @@ def render_site(output_dir, staging=False, prod=False):
                 nxt_move = 0
                 
             multi = cur_delve_index[turn_index]['multi']
+            folder = cur_delve_index[turn_index]['folder']
                 
             # now we have first nethack turn #, last nethack turn #, 
             # and previous and next turns for the current turn
@@ -129,6 +130,7 @@ def render_site(output_dir, staging=False, prod=False):
                                                           date=time_str,
                                                           delve_url=base_url,
                                                           multi=multi,
+                                                          folder=folder,
                                                           prod=prod)
                                
             turn_path = os.path.join(turn_dir,

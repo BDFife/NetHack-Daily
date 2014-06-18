@@ -187,22 +187,23 @@ def build_page(delve_id=0,
                date="January 1, 2013",
                delve_url="/", 
                multi=0,
+               folder="",
                prod=False):
 
     delve_dir = cfg['delves'][0]['dir_name']
 
     if multi == 0:
         # import the screenshot data
-        with codecs.open(os.path.join(delve_dir, '%s.nss' % turn), 
+        with codecs.open(os.path.join(delve_dir, folder, '%s.nss' % turn), 
                   encoding='utf-8') as scr_file:
             scr_data = scr_file.readlines()
 
         # add in the inventory and object descriptions
-        with codecs.open(os.path.join(delve_dir, '%s.inv' % turn),
+        with codecs.open(os.path.join(delve_dir, folder, '%s.inv' % turn),
                   encoding='utf-8') as inv_file:
             inv_data = inv_file.readlines()
     
-        with codecs.open(os.path.join(delve_dir, '%s.obj' % turn), 
+        with codecs.open(os.path.join(delve_dir, folder, '%s.obj' % turn), 
                   encoding='utf-8') as obj_file: 
             obj_data = obj_file.readlines()
 
@@ -214,38 +215,38 @@ def build_page(delve_id=0,
         # compensate for 0 offset
         for sub_turn in range(multi+1):
             # import the screenshot data
-            with codecs.open(os.path.join(delve_dir, 
+            with codecs.open(os.path.join(delve_dir, folder,  
                                           '%s_%s.nss' % (turn, sub_turn)), 
                       encoding='utf-8') as scr_file:
                 scr_data = scr_file.readlines()
 
             # add in the inventory and object descriptions
-            with codecs.open(os.path.join(delve_dir, 
+            with codecs.open(os.path.join(delve_dir, folder, 
                                           '%s_%s.inv' % (turn, sub_turn)),
                       encoding='utf-8') as inv_file:
                 inv_data = inv_file.readlines()
     
-            with codecs.open(os.path.join(delve_dir, 
+            with codecs.open(os.path.join(delve_dir, folder, 
                                           '%s_%s.obj' % (turn, sub_turn)), 
                       encoding='utf-8') as obj_file: 
                 obj_data = obj_file.readlines()
 
             body += build_nethack_section(scr_data, obj_data, inv_data)       
     
-    with codecs.open(os.path.join(delve_dir, "%s.cmd" % turn),
+    with codecs.open(os.path.join(delve_dir, folder, "%s.cmd" % turn),
                      encoding='utf-8') as key_file:
         commands = [ ] 
         key_data = key_file.readlines()
         for key in key_data:
             commands.append(key_descriptions.get(key.strip(), key))
     
-    with codecs.open(os.path.join(delve_dir,'%s.str' % turn),
+    with codecs.open(os.path.join(delve_dir, folder, '%s.str' % turn),
               encoding='utf-8') as str_file:
         str_data = str_file.read()
     
     story = str_data
     
-    with codecs.open(os.path.join(delve_dir,'%s.tip' % turn),
+    with codecs.open(os.path.join(delve_dir, folder, '%s.tip' % turn),
               encoding='utf-8') as tip_file:
         tip_data = tip_file.read()
     
