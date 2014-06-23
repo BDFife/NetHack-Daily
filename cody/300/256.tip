@@ -1,1 +1,4 @@
-Brian to write tip.
+Some spells, like Identify, allow you to interact with specific items
+in your inventory. However, from the perspective of the game engine,
+they are treated similar to other 'directionless' spells like Light. 
+

@@ -1,1 +1,6 @@
-Brian to write tip.
+Some spells, like Fireball, have a ranged area of effect  associated
+with them. These spells may sometimes be cast on a specific location
+away from your character, rather than just a in a direction,  like a
+ray or beam spell typically allows requires. These ranged spells will
+still follow a path to the target location, and may detonate early if
+they hit something on the way.
