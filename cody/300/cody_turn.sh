@@ -19,7 +19,7 @@ savegame_file="_501Cody.Z"
 # These are the files that are pre-requisites for the script to run.
 # They are not used by the script, but this rule is in place as 
 # a best practice. 
-prereq_files=( $turn_num.cmd $turn_num.nss )
+prereq_files=( $turn_num.cmd $turn_num.nss $savegame_loc)
 
 for file in ${prereq_files[@]}; do
     if [ ! -e "$file" ] 
