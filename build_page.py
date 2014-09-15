@@ -63,8 +63,8 @@ key_descriptions = {
     'R': "R - remove accessory",
     'G': "G - move until something interesting is found",
     '>': "> - descend a staircase",
-    '<': "< - ascend a staircase"
-
+    '<': "< - ascend a staircase",
+    'c': "c - close door"
 }
 
 
