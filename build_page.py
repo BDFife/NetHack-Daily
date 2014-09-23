@@ -65,6 +65,7 @@ key_descriptions = {
     '>': "> - descend a staircase",
     '<': "< - ascend a staircase",
     'c': "c - close door",
+    't': "t - throw object",
     'T': "T - take off armor"
 }
 
