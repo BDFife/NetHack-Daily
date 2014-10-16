@@ -1,1 +1,3 @@
-Brian to write tip.
+When a dungeon level has multiple exits in the same direction, one of
+these exits will lead to special level or levels that make up a
+branch. This branch will eventually end in a dead-end level.
