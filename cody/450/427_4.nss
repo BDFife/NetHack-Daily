@@ -1,4 +1,4 @@
-  a jackal corpse, 3 lichen corpses, a fox corpse...--More--                          
+  a jackal corpse, 3 lichen corpses, a fox corpse...--More--                      
                                                       
                                                       
                       ------------                    
