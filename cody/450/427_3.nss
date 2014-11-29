@@ -1,4 +1,4 @@
-  The ice box contains a sewer rat corpse, a newt corpse...--More--              
+  The ice box contains a sewer rat corpse, a newt corpse...--More--            
                                                       
                                                       
                       ------------                    
